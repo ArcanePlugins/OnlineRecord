@@ -14,7 +14,10 @@ public class Commands implements TabExecutor {
      * Access to the main class.
      */
     private final PeakPlayersRecord instance;
-    public Commands(final PeakPlayersRecord instance) { this.instance = instance; }
+
+    public Commands(final PeakPlayersRecord instance) {
+        this.instance = instance;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {

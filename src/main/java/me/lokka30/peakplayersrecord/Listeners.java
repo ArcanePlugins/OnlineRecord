@@ -14,7 +14,10 @@ public class Listeners implements Listener {
      * Access to the main class.
      */
     private final PeakPlayersRecord instance;
-    public Listeners(final PeakPlayersRecord instance) { this.instance = instance; }
+
+    public Listeners(final PeakPlayersRecord instance) {
+        this.instance = instance;
+    }
 
     @EventHandler
     public void onJoin(final PlayerJoinEvent event) {

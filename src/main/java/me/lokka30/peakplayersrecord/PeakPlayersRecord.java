@@ -40,6 +40,7 @@ public class PeakPlayersRecord extends JavaPlugin {
 
     /**
      * Translates all standard Minecraft colour codes (e.g. &a = lime green) in the specified message.
+     *
      * @param msg the message to translate
      * @return the translated message
      */
@@ -48,7 +49,7 @@ public class PeakPlayersRecord extends JavaPlugin {
     }
 
     public void debugMessage(final String msg) {
-        if(getConfig().getBoolean("debug")) {
+        if (getConfig().getBoolean("debug")) {
             getLogger().info(colorize("&9[DEBUG] &7" + msg));
         }
     }
