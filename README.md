@@ -1,5 +1,5 @@
 # OnlineRecord
-A SpigotMC plugin which logs and announces the details of when your server has its peak player count.
+A SpigotMC plugin which logs and announces the details of when your server has its record player count.
 
 ## Quick Links
 * [Discord Server](https://discord.io/arcaneplugins) (best medium to chat & receive technical support)
