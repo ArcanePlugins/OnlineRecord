@@ -1,6 +1,11 @@
 # PeakPlayersRecord
 A SpigotMC plugin which logs and announces the details of when your server has its peak player count.
 
+## Quick Links
+* [Discord Server](https://discord.io/arcaneplugins) (best medium to chat & receive technical support)
+* [GitHub Repository](https://github.com/lokka30/PeakPlayersRecord) (source code)
+* [Trello](https://trello.com/b/xAVFFEXQ/plugins-to-do-list) (to-do list for all of my resources)
+
 ## About
 When a player joins, the plugin simply checks its stored peak player count and compares it against the current player count. If there are more players than the previous peak player count, then a message can be broadcasted to all online players and the achievement is also logged to the console.
 
@@ -12,10 +17,11 @@ Advantages of this resource:
 * The plugin is simple to use, as it follows the standard procedure for installation and configuration on this platform.
 
 ## Requirements
-* Server software: CraftBukkit / SpigotMC / PaperMC (or forks of such should work).
-* Server version: Minecraft 1.7.x or newer. Older versions may work although they are unsupported by the author.
+* Server software: PaperMC (recommended) and SpigotMC are supported. CraftBukkit and other Bukkit-base software should be compatible too.
+* Server version: Minecraft 1.7.10 or newer. Older versions may be compatible although they are unsupported by the author.
 
 ## Installation and Configuration
+* Check the Requirements section above to see if your server will be compatible and supported prior to installing it on your server.
 * Download the resource.
 * Move the downloaded file into your server's `/plugins/` folder. 
 * If your server is already running: stopthe server by sending the `/stop` command.
@@ -50,11 +56,14 @@ If you wish to support me and my projects, here are a few ways:
 
 * You can leave a nice review down below, and/or hit the 'Like' button
 * You may donate to me on [PayPal](https://bit.ly/2Gxvw7R) or on my [Patreon](https://www.patreon.com/arcaneplugins).
-  * Donators and patrons are eligible for a special role on my Discord server, linked above.
+  * Donators and patrons are eligible for a special role on my Discord server, linked above. ;)
 
-Thank you *very* much for the support!
+Thank you *very* much!
+
+## License
+Licensed under [GNU GPL v3.0](https://github.com/lokka30/PeakPlayersRecord/blob/master/LICENSE.md).
 
 ## Reviews Note
-As stated in the Contact section, **I will ignore support requests in the review section**.
+As stated in the Contact section, **I will ignore support requests in the review section**. The reviews section was never intended for this purpose.
 
 Feel free to contact me prior to a review to get any issues ironed out.
