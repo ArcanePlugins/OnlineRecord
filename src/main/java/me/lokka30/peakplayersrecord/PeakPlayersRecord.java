@@ -36,12 +36,16 @@ public class PeakPlayersRecord extends JavaPlugin {
         Objects.requireNonNull(getCommand("peakplayersrecord")).setExecutor(new Commands());
     }
 
+    private String colorize(final String msg) {
+        return ChatColor.translateAlternateColorCodes('&', msg);
+    }
+
     class Listeners implements Listener {
         @EventHandler
         public void onJoin(final PlayerJoinEvent event) {
             final int currentlyOnline = Bukkit.getOnlinePlayers().size();
 
-            if(currentlyOnline > currentPeak) {
+            if (currentlyOnline > currentPeak) {
                 // Change peak count.
                 currentPeak = currentlyOnline;
                 getConfig().set("data.currentPeak", currentPeak);
@@ -55,7 +59,7 @@ public class PeakPlayersRecord extends JavaPlugin {
                 getLogger().info("New peak player count reached: " + currentPeak + " players are online.");
 
                 // Announce the achievement.
-                if(getConfig().getBoolean("messages.announcement.enabled")) {
+                if (getConfig().getBoolean("messages.announcement.enabled")) {
                     List<String> messages = getConfig().getStringList("messages.announcement.text");
                     messages.forEach(message -> {
                         message = colorize(message);
@@ -74,12 +78,12 @@ public class PeakPlayersRecord extends JavaPlugin {
 
         @Override
         public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-            if(sender.hasPermission("peakplayersrecord.command")) {
-                if(args.length == 0) {
+            if (sender.hasPermission("peakplayersrecord.command")) {
+                if (args.length == 0) {
                     getConfig().getStringList("messages.help").forEach(sender::sendMessage);
-                } else if(args.length == 1) {
-                    if(args[0].equalsIgnoreCase("reload")) {
-                        if(sender.hasPermission("peakplayersrecord.command.reload")) {
+                } else if (args.length == 1) {
+                    if (args[0].equalsIgnoreCase("reload")) {
+                        if (sender.hasPermission("peakplayersrecord.command.reload")) {
                             getConfig().getStringList("messages.reload.start").forEach(sender::sendMessage);
 
                             saveDefaultConfig(); // In case they've decided to delete it whilst the plugin is running.
@@ -103,14 +107,10 @@ public class PeakPlayersRecord extends JavaPlugin {
 
         @Override
         public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
-            if(args.length == 0) {
+            if (args.length == 0) {
                 return Collections.singletonList("reload");
             }
             return null;
         }
-    }
-
-    private String colorize(final String msg) {
-        return ChatColor.translateAlternateColorCodes('&', msg);
     }
 }

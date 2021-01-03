@@ -7,7 +7,7 @@ author: 'lokka30'
 commands:
   peakplayersrecord:
     description: 'Manage the resource.'
-    aliases: [peakplayers, ppr]
+    aliases: [ peakplayers, ppr ]
     usage: /<command> [reload]
 
 permissions:
