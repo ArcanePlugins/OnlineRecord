@@ -1,0 +1,27 @@
+name: 'PeakPlayersRecord'
+version: '${project.version}'
+main: 'me.lokka30.peakplayersrecord.PeakPlayersRecord'
+api-version: '1.13'
+author: 'lokka30'
+
+commands:
+  peakplayersrecord:
+    description: 'Manage the resource.'
+    aliases: [peakplayers, ppr]
+    usage: /<command> [reload]
+
+permissions:
+  peakplayersrecord.*:
+    default: op
+    description: 'Contains all permissions from PeakPlayersRecord.'
+    children:
+      peakplayersrecord.command: true
+      peakplayersrecord.command.reload: true
+  peakplayersrecord.command:
+    default: op
+    description: 'Ability to run the ''/ppr'' command.'
+  peakplayersrecord.command.reload:
+    default: op
+    description: 'Ability to run the ''/ppr reload'' command. User also requires the permission ''peakplayersrecord.command''.'
+    children:
+      peakplayersrecord.command: true
