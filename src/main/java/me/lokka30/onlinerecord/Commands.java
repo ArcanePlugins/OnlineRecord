@@ -1,4 +1,4 @@
-package me.lokka30.peakplayersrecord;
+package me.lokka30.onlinerecord;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -13,9 +13,9 @@ public class Commands implements TabExecutor {
     /**
      * Access to the main class.
      */
-    private final PeakPlayersRecord instance;
+    private final OnlineRecord instance;
 
-    public Commands(final PeakPlayersRecord instance) {
+    public Commands(final OnlineRecord instance) {
         this.instance = instance;
     }
 
@@ -23,12 +23,12 @@ public class Commands implements TabExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         instance.debugMessage("Command ran.");
 
-        if (sender.hasPermission("peakplayersrecord.command")) {
+        if (sender.hasPermission("onlinerecord.command")) {
             if (args.length == 0) {
                 instance.getConfig().getStringList("messages.help").forEach(message -> sender.sendMessage(instance.colorize(message)));
             } else if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("reload")) {
-                    if (sender.hasPermission("peakplayersrecord.command.reload")) {
+                    if (sender.hasPermission("onlinerecord.command.reload")) {
                         instance.getConfig().getStringList("messages.reload.start").forEach(message -> sender.sendMessage(instance.colorize(message)));
 
                         instance.saveDefaultConfig(); // In case they've decided to delete it whilst the plugin is running.

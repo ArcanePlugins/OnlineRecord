@@ -1,38 +1,38 @@
-# PeakPlayersRecord by lokka30
+# OnlineRecord by lokka30
 messages:
 
   announcement:
     enabled: true
     text:
       - ' '
-      - '&b&nPeak Players Record&r'
-      - '&7A new record of peak players online has been set, with &b%players%&7 players online!'
+      - '&b&nOnlineRecord&r'
+      - '&7We have reached a new record of the amount of online players at once, with &b%players%&7 players online! Thank you for participating. :)'
       - ' '
 
   help:
     - ' '
-    - '&b&nPeak Players Record&7 by lokka30&r'
+    - '&b&nOnlineRecord&7 by lokka30&r'
     - ' '
     - '&f&nAvailable commands:&r'
-    - '&8 &m->&b /ppr&8 - &7view command info'
-    - '&8 &m->&b /ppr reload&8 - &7reload config'
+    - '&8 &m->&b /or&8 - &7view command info'
+    - '&8 &m->&b /or reload&8 - &7reload config'
     - ' '
 
   reload:
     start:
-      - '&b&lPeakPlayersRecord: &7Reloading config...'
+      - '&b&lOnlineRecord: &7Reloading config...'
 
     finish:
-      - '&b&lPeakPlayersRecord: &7Reload complete.'
+      - '&b&lOnlineRecord: &7Reload complete.'
 
   no-permission:
-    - '&b&lPeakPlayersRecord: &7You don''t have access to that.'
+    - '&b&lOnlineRecord: &7You don''t have access to that.'
 
   usage:
-    - '&b&lPeakPlayersRecord: &7Usage: &b/ppr [reload]'
+    - '&b&lOnlineRecord: &7Usage: &b/or [reload]'
 
 data:
-  currentPeak: 0
-  playerListAtPeak: "N/A"
+  currentRecord: 0
+  playersOnlineAtRecord: "N/A"
 
 debug: false

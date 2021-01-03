@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.lokka30</groupId>
-    <artifactId>PeakPlayersRecord</artifactId>
+    <artifactId>OnlineRecord</artifactId>
     <version>1.0.0</version>
 
-    <name>PeakPlayersRecord</name>
-    <description>Record when your server reached its peak player count.</description>
+    <name>OnlineRecord</name>
+    <description>Announce and view when your server reached its record online player count.</description>
 
     <properties>
         <java.version>1.8</java.version>

@@ -1,4 +1,4 @@
-# PeakPlayersRecord
+# OnlineRecord
 A SpigotMC plugin which logs and announces the details of when your server has its peak player count.
 
 ## Quick Links
@@ -26,21 +26,21 @@ Advantages of this resource:
 * Move the downloaded file into your server's `/plugins/` folder. 
 * If your server is already running: stopthe server by sending the `/stop` command.
 * Start your server. This will generate the configuration files.
-* Once your server has started, navigate to the `/plugins/PeakPlayersRecord/` folder.
+* Once your server has started, navigate to the `/plugins/OnlineRecord/` folder.
 * Open the `config.yml` file with your preferred editor. I recommend Notepad++ for Windows users.
 * Change any settings to your liking.
-* Apply the changes by running `/ppr reload` or restarting your server.
+* Apply the changes by running `/or reload` or restarting your server.
 * Enjoy! :)
 
 ## Commands & Permissions
-* `/peakplayersrecord`
+* `/onlinerecord`
   * Description: `Contains commands to manage the resource.`
-  * Aliases: `/ppr`, `/peakplayers`
-  * Requires permission: `peakplayersrecord.command`
+  * Aliases: `/or`
+  * Requires permission: `onlinerecord.command`
   
-* `/peakplayersrecord reload`
+* `/onlinerecord reload`
   * Description: `Reload the configuration.`
-  * Requires permissions: `peakplayersrecord.command` & `peakplayersrecord.reload`
+  * Requires permissions: `onlinerecord.command` & `onlinerecord.reload`
   
 ## Contact
 Got a question, issue or suggestion? Feel free to send it my way. I will do my best to help you out. :)

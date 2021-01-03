@@ -1,32 +1,32 @@
 # Plugin Information
-name: PeakPlayersRecord
+name: OnlineRecord
 version: ${project.version}
 author: lokka30
 
 # Code Information
-main: me.lokka30.peakplayersrecord.PeakPlayersRecord
+main: me.lokka30.onlinerecord.OnlineRecord
 api-version: '1.13'
 
 # Commands
 commands:
-  peakplayersrecord:
+  onlinerecord:
     description: 'Manage the resource.'
-    aliases: [ peakplayers, ppr ]
+    aliases: [ or ]
     usage: /<command> [reload]
 
 # Permissions
 permissions:
-  peakplayersrecord.*:
+  onlinerecord.*:
     default: op
-    description: 'Contains all permissions from PeakPlayersRecord.'
+    description: 'Contains all permissions from the resource.'
     children:
-      peakplayersrecord.command: true
-      peakplayersrecord.command.reload: true
+      onlinerecord.command: true
+      onlinerecord.command.reload: true
 
-  peakplayersrecord.command:
+  onlinerecord.command:
     default: op
-    description: 'Ability to run the ''/ppr'' command.'
-  peakplayersrecord.command.reload:
+    description: 'Ability to run the ''/or'' command.'
 
+  onlinerecord.command.reload:
     default: op
-    description: 'Ability to run the ''/ppr reload'' command. User also requires the permission ''peakplayersrecord.command''.'
+    description: 'Ability to run the ''/or reload'' command. User also requires the permission ''onlinerecord.command''.'

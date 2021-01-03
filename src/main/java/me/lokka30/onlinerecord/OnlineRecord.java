@@ -1,16 +1,16 @@
-package me.lokka30.peakplayersrecord;
+package me.lokka30.onlinerecord;
 
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 
-public class PeakPlayersRecord extends JavaPlugin {
+public class OnlineRecord extends JavaPlugin {
 
     /**
      * This is the number of players of the highest peak, it is stored in memory to minimise disk usage.
      */
-    public int currentPeak;
+    public int currentRecord;
 
     /**
      * This is ran when the plugin starts up.
@@ -21,11 +21,11 @@ public class PeakPlayersRecord extends JavaPlugin {
         getLogger().info("Loading config...");
         saveDefaultConfig();
         getConfig().options().copyDefaults(true);
-        getConfig().options().header("PeakPlayersRecord by lokka30");
+        getConfig().options().header("OnlineRecord by lokka30");
 
         // Save the peak in memory to minimise disk usage
-        getLogger().info("Storing current peak to memory...");
-        currentPeak = getConfig().getInt("data.currentPeak");
+        getLogger().info("Storing current record to memory...");
+        currentRecord = getConfig().getInt("data.currentRecord");
 
         // Register the listener to put the plugin into effect
         getLogger().info("Registering listeners...");
@@ -33,7 +33,7 @@ public class PeakPlayersRecord extends JavaPlugin {
 
         // Register the command
         getLogger().info("Registering commands...");
-        Objects.requireNonNull(getCommand("peakplayersrecord")).setExecutor(new Commands(this));
+        Objects.requireNonNull(getCommand("onlinerecord")).setExecutor(new Commands(this));
 
         getLogger().info("Start-up complete.");
     }
@@ -48,6 +48,11 @@ public class PeakPlayersRecord extends JavaPlugin {
         return ChatColor.translateAlternateColorCodes('&', msg);
     }
 
+    /**
+     * Sends a debug message to console if the 'debug' option is enabled in the configuration.
+     *
+     * @param msg the message to send if debugging is enabled.
+     */
     public void debugMessage(final String msg) {
         if (getConfig().getBoolean("debug")) {
             getLogger().info(colorize("&9[DEBUG] &7" + msg));
