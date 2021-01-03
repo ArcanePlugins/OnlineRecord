@@ -1,5 +1,5 @@
 # PeakPlayersRecord by lokka30
-message:
+messages:
 
   announcement:
     enabled: true
@@ -34,3 +34,5 @@ message:
 data:
   currentPeak: 0
   playerListAtPeak: "N/A"
+
+debug: false
