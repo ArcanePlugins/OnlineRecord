@@ -1,2 +1,10 @@
+# maven
 /target/
-.idea/workspace.xml
+
+# intellij
+.idea/
+
+# macos
+.DS_Store
+._*
+Thumbs.db
