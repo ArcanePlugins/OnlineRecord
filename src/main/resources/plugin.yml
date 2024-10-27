@@ -1,16 +1,13 @@
-# Plugin Information
 name: OnlineRecord
 version: ${project.version}
-author: lokka30
-
-# Code Information
-main: me.lokka30.onlinerecord.OnlineRecord
+authors: [ lokka30 ]
+main: io.github.arcaneplugins.onlinerecord.OnlineRecord
 api-version: '1.13'
 
 # Commands
 commands:
   onlinerecord:
-    description: 'Manage the resource.'
+    description: 'Manage the OnlineRecord plugin.'
     aliases: [ or ]
     usage: /<command> [reload]
 
@@ -24,8 +21,8 @@ permissions:
       onlinerecord.command.reload: true
 
   onlinerecord.command:
-    default: op
-    description: 'Ability to run the ''/or'' command.'
+    default: true
+    description: 'Ability to run the ''/or'' (base) command.'
 
   onlinerecord.command.reload:
     default: op

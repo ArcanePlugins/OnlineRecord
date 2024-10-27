@@ -1,0 +1,6 @@
+records-by-count:
+
+metadata:
+  installed-version: 1
+  original-version: 1
+  generated-with: "${project.version}"

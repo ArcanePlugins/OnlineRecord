@@ -1,38 +1,16 @@
-# OnlineRecord by lokka30
-messages:
+record-announcement:
+  enable-chat-message: true
+  enable-log-message: true
 
-  announcement:
-    enabled: true
-    text:
-      - ' '
-      - '&b&nOnlineRecord&r'
-      - '&7We have reached a new record of the amount of online players at once, with &b%players%&7 players online! Thank you for participating. :)'
-      - ' '
+compatibility:
+  generic-vanish: true
 
-  help:
-    - ' '
-    - '&b&nOnlineRecord&7 by lokka30&r'
-    - ' '
-    - '&f&nAvailable commands:&r'
-    - '&8 &m->&b /or&8 - &7view command info'
-    - '&8 &m->&b /or reload&8 - &7reload config'
-    - ' '
+advanced:
+  debugging:
+    enabled: false
+    categories: [ "*" ]
 
-  reload:
-    start:
-      - '&b&lOnlineRecord: &7Reloading config...'
-
-    finish:
-      - '&b&lOnlineRecord: &7Reload complete.'
-
-  no-permission:
-    - '&b&lOnlineRecord: &7You don''t have access to that.'
-
-  usage:
-    - '&b&lOnlineRecord: &7Usage: &b/or [reload]'
-
-data:
-  currentRecord: 0
-  playersOnlineAtRecord: "N/A"
-
-debug: false
+metadata:
+  installed-version: 2
+  original-version: 2
+  generated-with: "${project.version}"

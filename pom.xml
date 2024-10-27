@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.lokka30</groupId>
-    <artifactId>OnlineRecord</artifactId>
-    <version>1.0.0</version>
+    <groupId>io.github.arcaneplugins.onlinerecord</groupId>
+    <artifactId>OnlineRecord-Bukkit</artifactId>
+    <version>2.0.0</version>
 
     <name>OnlineRecord</name>
     <description>Announce and view when your server reached its record online player count.</description>
@@ -29,7 +29,13 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.16.4-R0.1-SNAPSHOT</version>
+            <version>1.21.3-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>13.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

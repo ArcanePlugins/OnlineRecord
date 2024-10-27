@@ -3,6 +3,7 @@
 
 # intellij
 .idea/
+*.iml
 
 # macos
 .DS_Store

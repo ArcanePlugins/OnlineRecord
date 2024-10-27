@@ -1,0 +1,46 @@
+prefix: '&b&lOnlineRecord:&7'
+
+messages:
+
+  new-record:
+
+    chat-message:
+      - ' '
+      - '&b&nNew Online Record!&r'
+      - '&7We have reached a new record of the amount of online players at once, with &b%player-count%&7 players online. Thank you for participating!'
+      - ' '
+
+    log-message:
+      - 'New online record achieved (%player-count% players online)!'
+
+  no-permission:
+    - '%prefix% You don''t have access to that.'
+
+  command:
+    onlinerecord:
+      base:
+        - ' '
+        - '&b&lOnlineRecord&b v%version%&7 by &i%authors%'
+        - ' '
+        - '&f&nAvailable commands:'
+        - '&8 &m->&b /or&8 :: &7View command help.'
+        - '&8 &m->&b /or reload&8 :: &7Reload configuration.'
+        - ' '
+
+      reload:
+        start:
+          - '%prefix% Reloading config...'
+
+        finish:
+          - '%prefix% Reload complete.'
+
+        failed:
+          - '%prefix% &cReload failed!&7 Check console for further details.'
+
+      usage:
+        - '%prefix% &7Usage: &b/%command% [reload]'
+
+metadata:
+  installed-version: 1
+  original-version: 1
+  generated-with: "${project.version}"
