@@ -1,6 +1,7 @@
 package io.github.arcaneplugins.onlinerecord;
 
 import io.github.arcaneplugins.onlinerecord.command.OnlineRecordCommand;
+import io.github.arcaneplugins.onlinerecord.configuration.LegacyMigrator;
 import io.github.arcaneplugins.onlinerecord.configuration.YamlWrapper;
 import io.github.arcaneplugins.onlinerecord.configuration.impl.config.Config;
 import io.github.arcaneplugins.onlinerecord.configuration.impl.data.Data;
@@ -32,6 +33,9 @@ public final class OnlineRecord extends JavaPlugin {
                 messages(),
                 config()
         ).forEach(YamlWrapper::load);
+
+        final LegacyMigrator legacyMigrator = new LegacyMigrator(this);
+        legacyMigrator.migrate();
     }
 
     private void registerListeners() {

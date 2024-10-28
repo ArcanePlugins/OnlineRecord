@@ -41,7 +41,8 @@ public final class Config extends YamlWrapper {
 
     @Override
     protected void migrate() {
-        // TODO migrate old file to new file.
+        fileVersionStupidityCheck();
+        // intentionally do nothing until future file versions arrive
     }
 
     public boolean isRecordAnnouncementChatMessageEnabled() {
@@ -72,6 +73,15 @@ public final class Config extends YamlWrapper {
 
     public boolean isGenericVanishCompatibilityEnabled() {
         return cfg().getBoolean("compatibility.generic-vanish");
+    }
+
+    // Determine if `config.yml` from OnlineRecord v1.x is being used.
+    public boolean isLegacyConfigFile() {
+        // We can determine if a legacy config is being used by checking the existence of these paths
+        return cfg().contains("debug", true) &&
+                cfg().contains("data", true) &&
+                cfg().contains("messages", true) &&
+                !cfg().contains("metadata", true);
     }
 
 }

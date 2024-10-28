@@ -18,7 +18,8 @@ public final class Messages extends YamlWrapper {
 
     @Override
     protected void migrate() {
-        // TODO migrate old file to new file.
+        fileVersionStupidityCheck();
+        // intentionally do nothing until future file versions arrive
     }
 
     @NotNull

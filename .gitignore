@@ -1,3 +1,6 @@
+# local development only
+local/
+
 # maven
 /target/
 

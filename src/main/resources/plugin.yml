@@ -1,7 +1,8 @@
 name: OnlineRecord
-version: ${project.version}
+version: '${project.version}'
 authors: [ lokka30 ]
 main: io.github.arcaneplugins.onlinerecord.OnlineRecord
+description: '${project.description}'
 api-version: '1.13'
 
 # Commands

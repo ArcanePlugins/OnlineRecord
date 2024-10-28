@@ -19,7 +19,8 @@ public final class Data extends YamlWrapper {
 
     @Override
     protected void migrate() {
-        // TODO Migrate old cfg data.
+        fileVersionStupidityCheck();
+        // intentionally do nothing until future file versions arrive
     }
 
     public int getCurrentRecordCount() {
