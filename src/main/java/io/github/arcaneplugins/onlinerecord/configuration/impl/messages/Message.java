@@ -10,6 +10,8 @@ import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static io.github.arcaneplugins.onlinerecord.misc.DebugCategory.MESSAGE;
+
 public enum Message {
 
     PREFIX("prefix", false),
@@ -58,6 +60,12 @@ public enum Message {
         Objects.requireNonNull(plugin);
         Objects.requireNonNull(recipient);
         Objects.requireNonNull(placeholderer);
+
+        plugin.debugLog(
+                MESSAGE,
+                () -> "Sending message " + name() + " to " + recipient.getName() + ". Is list: " + isList() +
+                        ". Contents: " + (isList() ? String.join(", ", list(plugin)) : string(plugin))
+        );
 
         if(isList()) {
             list(plugin)

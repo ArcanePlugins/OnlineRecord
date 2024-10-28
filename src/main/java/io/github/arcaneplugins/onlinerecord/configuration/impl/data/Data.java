@@ -2,12 +2,11 @@ package io.github.arcaneplugins.onlinerecord.configuration.impl.data;
 
 import io.github.arcaneplugins.onlinerecord.OnlineRecord;
 import io.github.arcaneplugins.onlinerecord.configuration.YamlWrapper;
+import org.bukkit.configuration.ConfigurationSection;
 
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
 
 public final class Data extends YamlWrapper {
 
@@ -24,7 +23,13 @@ public final class Data extends YamlWrapper {
     }
 
     public int getCurrentRecordCount() {
-        return Objects.requireNonNull(cfg().getConfigurationSection("records-by-count"))
+        final ConfigurationSection section = cfg().getConfigurationSection("records-by-count");
+
+        if (section == null) {
+            return 0;
+        }
+
+        return section
                 .getKeys(false)
                 .stream()
                 .map(Integer::parseInt)
@@ -32,8 +37,8 @@ public final class Data extends YamlWrapper {
                 .orElse(0);
     }
 
-    public void saveRecord(final int playerCount, final Map<UUID, String> idNameMap) {
-        cfg().set("records-by-count." + playerCount + ".online-players", idNameMap);
+    public void saveRecord(final int playerCount, final Map<String, String> uuidNameMap) {
+        cfg().set("records-by-count." + playerCount + ".online-players", uuidNameMap);
         save();
     }
 

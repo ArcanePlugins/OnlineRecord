@@ -26,7 +26,7 @@ public final class Config extends YamlWrapper {
     protected void postLoad() {
         debugCategories().clear();
         final List<String> catsStr = debuggingCategoriesAsStr();
-        if (catsStr.contains("ALL")) {
+        if (catsStr.contains("ALL") || catsStr.contains("*")) {
             this.debugCategories.addAll(EnumSet.allOf(DebugCategory.class));
         } else if (isDebuggingEnabled()) {
             for (final String catStr : catsStr) {
@@ -66,7 +66,6 @@ public final class Config extends YamlWrapper {
         return debugCategories;
     }
 
-    @SuppressWarnings("unused")
     public boolean isDebugCategoryEnabled(final @NotNull DebugCategory cat) {
         return debugCategories().contains(cat);
     }

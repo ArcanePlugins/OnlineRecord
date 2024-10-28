@@ -7,11 +7,13 @@ import io.github.arcaneplugins.onlinerecord.configuration.impl.config.Config;
 import io.github.arcaneplugins.onlinerecord.configuration.impl.data.Data;
 import io.github.arcaneplugins.onlinerecord.configuration.impl.messages.Messages;
 import io.github.arcaneplugins.onlinerecord.listener.PlayerJoinListener;
+import io.github.arcaneplugins.onlinerecord.misc.DebugCategory;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 public final class OnlineRecord extends JavaPlugin {
 
@@ -60,6 +62,17 @@ public final class OnlineRecord extends JavaPlugin {
     @NotNull
     public Messages messages() {
         return Objects.requireNonNull(messages);
+    }
+
+    public void debugLog(
+            @NotNull final DebugCategory cat,
+            @NotNull final Supplier<String> msg
+    ) {
+        if (!config().isDebugCategoryEnabled(cat)) {
+            return;
+        }
+
+        getLogger().info("[DEBUG::" + cat.name() + "]: " + msg.get());
     }
 
 }

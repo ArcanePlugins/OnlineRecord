@@ -20,7 +20,7 @@ messages:
     onlinerecord:
       base:
         - ' '
-        - '&b&lOnlineRecord&b v%version%&7 by &i%authors%'
+        - '&b&lOnlineRecord&b v%version%&7 by &o%authors%'
         - ' '
         - '&f&nAvailable commands:'
         - '&8 &m->&b /or&8 :: &7View command help.'
@@ -28,10 +28,10 @@ messages:
         - ' '
 
       reload:
-        start:
+        started:
           - '%prefix% Reloading config...'
 
-        finish:
+        finished:
           - '%prefix% Reload complete.'
 
         failed:

@@ -7,6 +7,8 @@ import io.github.arcaneplugins.onlinerecord.configuration.impl.messages.Messages
 import org.jetbrains.annotations.NotNull;
 
 import java.time.Instant;
+import java.time.ZoneId;
+import java.util.Collections;
 import java.util.Objects;
 
 public class LegacyMigrator {
@@ -75,11 +77,11 @@ public class LegacyMigrator {
                 config.cfg().getStringList("messages.help")
         );
         messages.cfg().set(
-                "messages.command.onlinerecord.reload.start",
+                "messages.command.onlinerecord.reload.started",
                 config.cfg().getStringList("messages.reload.start")
         );
         messages.cfg().set(
-                "messages.command.onlinerecord.reload.finish",
+                "messages.command.onlinerecord.reload.finished",
                 config.cfg().getStringList("messages.reload.finish")
         );
         messages.cfg().set(
@@ -96,18 +98,24 @@ public class LegacyMigrator {
                 "advanced.debugging.enabled",
                 config.cfg().getBoolean("debug", false)
         );
+        config.cfg().set(
+                "advanced.debugging.categories",
+                Collections.singletonList("*")
+        );
         config.cfg().set("debug", null);
         messages.cfg().set("prefix", "&b&lOnlineRecord:&7");
         messages.cfg().set(
                 "messages.new-record.log-message",
-                "New online record achieved (%player-count% players online)!"
+                Collections.singletonList("New online record achieved (%player-count% players online)!")
         );
         messages.cfg().set(
                 "messages.command.onlinerecord.reload.finish",
-                "%prefix% &cReload failed!&7 Check cosole for further details."
+                Collections.singletonList("%prefix% &cReload failed!&7 Check cosole for further details.")
         );
 
-        final String dateStr = Instant.now().toString();
+        final String dateStr = Instant.now()
+                .atZone(ZoneId.systemDefault())
+                .toString();
         config.cfg().set("metadata.migration-on", dateStr);
         messages.cfg().set("metadata.migration-on", dateStr);
         data.cfg().set("metadata.migration-on", dateStr);

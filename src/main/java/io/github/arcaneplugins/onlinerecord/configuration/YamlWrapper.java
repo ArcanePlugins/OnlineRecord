@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.time.Instant;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
@@ -105,8 +106,13 @@ public abstract class YamlWrapper {
 
         int i = 1;
         while (true) {
-            final String dateStr = DateTimeFormatter.BASIC_ISO_DATE.format(Instant.now());
-            final File backupFile = new File(backupFolder.getAbsolutePath(), fileName + "_" + dateStr + "_" + i);
+            final String dateStr = DateTimeFormatter.BASIC_ISO_DATE
+                    .withZone(ZoneId.systemDefault())
+                    .format(Instant.now());
+            final File backupFile = new File(
+                    backupFolder.getAbsolutePath(),
+                    fileName + "_" + dateStr + "_" + i + ".yml"
+            );
 
             if (backupFile.exists()) {
                 i++;
