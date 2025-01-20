@@ -27,11 +27,11 @@ public final class Config extends YamlWrapper {
         debugCategories().clear();
         final List<String> catsStr = debuggingCategoriesAsStr();
         if (catsStr.contains("ALL") || catsStr.contains("*")) {
-            this.debugCategories.addAll(EnumSet.allOf(DebugCategory.class));
+            debugCategories().addAll(EnumSet.allOf(DebugCategory.class));
         } else if (isDebuggingEnabled()) {
             for (final String catStr : catsStr) {
                 try {
-                    this.debugCategories.add(DebugCategory.valueOf(catStr.toUpperCase(Locale.ROOT)));
+                    debugCategories().add(DebugCategory.valueOf(catStr.toUpperCase(Locale.ROOT)));
                 } catch (IllegalArgumentException ignored) {
                     plugin().getLogger().warning("Unrecognised debug category '" + catStr + "'.");
                 }
@@ -67,7 +67,7 @@ public final class Config extends YamlWrapper {
     }
 
     public boolean isDebugCategoryEnabled(final @NotNull DebugCategory cat) {
-        return debugCategories().contains(cat);
+        return isDebuggingEnabled() && debugCategories().contains(cat);
     }
 
     public boolean isGenericVanishCompatibilityEnabled() {
